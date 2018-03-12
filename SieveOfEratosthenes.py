@@ -19,19 +19,17 @@ start_time = time.time()
 def sieve(l):
     sl = l - 2
     a = [True]*sl
+    p = []
     for i in range(sl):
         if a[i]:
             j = 2 * i + 2
             while j < sl:
                 a[j] = False
                 j += i + 2
-    p = []
-    for i in range(sl):
-        if a[i]:
             p.append(i + 2)
     return p
 
 
-print(sieve(2000000))
-print("{0} ms".format((time.time() - start_time) * 1000))
 print(sum(sieve(2000000)))
+print("{0} ms".format((time.time() - start_time) * 1000))
+

@@ -14,12 +14,11 @@
 
 import time
 start_time = time.time()
-import numpy as np
 
 
 def sieve(l):
     sl = l - 2
-    a = np.array([True]*sl)
+    a = [True]*sl
     for i in range(sl):
         if a[i]:
             j = 2 * i + 2
@@ -33,6 +32,6 @@ def sieve(l):
     return p
 
 
-print(sieve(1000000))
+print(sieve(2000000))
 print("{0} ms".format((time.time() - start_time) * 1000))
-print(sum(sieve(1000000)))
+print(sum(sieve(2000000)))
